@@ -1,4 +1,4 @@
-function calulateArea(radius) {
+function calculateArea(radius) {
   return Math.PI * radius * radius;
 }
 
@@ -35,8 +35,8 @@ class car {
 
 }
 
-const car1 = new Car("Toyota", "Corolla", 2021);
-const car2 = new Car("Honda", "Civic", 2022);
+const car1 = new car("Toyota", "Corolla", 2021);
+const car2 = new car("Honda", "Civic", 2022);
 
 console.log(car1.getCarInfo());
 console.log(car2.getCarInfo());
