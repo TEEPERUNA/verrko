@@ -1,11 +1,10 @@
+import Greeting from "./components/greetings";
+
 const App = () => (
 
-  <div>
-
-    <p>Hello world</p>
-
-  </div>
-
-)
+    <div>
+      <Greeting name="Erik" />
+    </div>
+  );
 
 export default App
