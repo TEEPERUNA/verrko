@@ -11,7 +11,7 @@ function App() {
   const [transactions, setTransactions] = useState([]);
 
   const addTransaction = (transaction) => {
-    setTransactions(transactions.push(transaction));
+    setTransactions([...transactions, transaction]);
   };
 
   const removeTransaction = (id) => {
