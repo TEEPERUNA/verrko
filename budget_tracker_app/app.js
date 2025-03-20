@@ -1,13 +1,13 @@
 let transactions = [];
 
-// DOM Elements
+
 const form = document.getElementById('transaction-form');
 const descriptionInput = document.getElementById('description');
 const amountInput = document.getElementById('amount');
 const transactionList = document.getElementById('transaction-list');
 const balanceDisplay = document.getElementById('balance');
 
-// Form submit event listener
+
 form.addEventListener('submit', function(e) {
   e.preventDefault();
 
@@ -19,27 +19,24 @@ form.addEventListener('submit', function(e) {
     return;
   }
 
-  // Create a transaction object
+
   const transaction = {
     id: Date.now(),
     description,
     amount
   };
 
-  // Add to transactions array
   transactions.push(transaction);
 
   // Update UI
   updateUI();
 
-  // Clear form fields
   descriptionInput.value = '';
   amountInput.value = '';
 });
 
-// Update the UI with the latest transactions and balance
 function updateUI() {
-  // Clear current list
+
   transactionList.innerHTML = '';
 
   let totalIncome = 0;
@@ -65,7 +62,7 @@ function updateUI() {
   balanceDisplay.textContent = `$${currentBalance.toFixed(2)}`;
 }
 
-// Delete a transaction by id
+
 function deleteTransaction(id) {
   transactions = transactions.filter(t => t.id !== id);
   updateUI();
