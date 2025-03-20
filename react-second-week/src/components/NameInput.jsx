@@ -1,17 +1,14 @@
-import React from 'react'
+import React from 'react';
 
-function NameInput({ name, setName }) {
+const NameInput = ({ name, setName }) => {
   return (
-    <div>
-      <label htmlFor="nameField">Enter your name: </label>
-      <input
-        id="nameField"
-        type="text"
-        value={name}
-        onChange={(e) => setName(e.target.value)}
-      />
-    </div>
-  )
-}
+    <input 
+      type="text" 
+      value={name} 
+      onChange={(e) => setName(e.target.value)} 
+      placeholder="Type your name" 
+    />
+  );
+};
 
-export default NameInput
+export default NameInput;

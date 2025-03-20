@@ -1,29 +1,19 @@
-import React from 'react'
+import React from 'react';
 
-function Weekdays() {
-
-  const weekdays = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
-
-  const todayIndex = new Date().getDay() 
-
-  const correctedIndex = (todayIndex === 0) ? 6 : todayIndex - 1
+const Weekdays = () => {
+  const weekdays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+  const todayIndex = new Date().getDay();
   
-
-  const reordered = [
-    ...correctedWeekdays.slice(correctedIndex),
-    ...correctedWeekdays.slice(0, correctedIndex)
-  ]
+  // Reorder weekdays so that today is the first element
+  const orderedWeekdays = [...weekdays.slice(todayIndex), ...weekdays.slice(0, todayIndex)];
 
   return (
-    <div>
-      <h2>Weekdays Starting From Today</h2>
-      <ul>
-        {reordered.map((day, i) => (
-          <li key={i}>{day}</li>
-        ))}
-      </ul>
-    </div>
-  )
-}
+    <ul>
+      {orderedWeekdays.map((day, index) => (
+        <li key={index}>{day}</li>
+      ))}
+    </ul>
+  );
+};
 
-export default Weekdays
+export default Weekdays;
