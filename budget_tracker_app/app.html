@@ -9,24 +9,27 @@
 <body>
     <div class="container">
         <h1>Budget Tracker</h1>
-        
-        <!-- Balance Section -->
+
         <div class="balance-box">
           <h3>Current Balance</h3>
-          <div id="balance">$0.00</div>
+          <div id="balance">0.00 €</div>
         </div>
         
-        <!-- Transaction Form -->
         <form id="transaction-form">
           <div>
             <label for="description">Description</label>
-            <input type="text" id="description" placeholder="Enter description" required />
+            <input type="text" id="description" placeholder="Example: S-market" required />
           </div>
           <div>
             <label for="amount">Amount</label>
-            <input type="number" id="amount" placeholder="Enter amount" required />
+            <input type="number" id="amount" placeholder="Example -50 or + 50" required />
           </div>
           <button type="submit">Add Transaction</button>
         </form>
+
+        <ul id="transaction-list"></ul>
+    </div>
+
+    <script src="app.js"></script>
 </body>
 </html>
