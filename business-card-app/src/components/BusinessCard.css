@@ -1,0 +1,40 @@
+.business-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 16px;
+    width: 300px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    background-color: #fff;
+  }
+  
+  .card-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+  }
+  
+  .company-logo {
+    width: 50px;
+    height: 50px;
+    margin-right: 12px;
+    border-radius: 4px;
+  }
+  
+  .card-body p {
+    margin: 6px 0;
+  }
+  
+  .card-body button {
+    margin-top: 10px;
+    padding: 8px 12px;
+    background-color: #7F5AF0;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .card-body button:hover {
+    background-color: #6C4AD1;
+  }
+  
