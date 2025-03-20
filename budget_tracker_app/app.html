@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budget Tracker App</title>
+    <link rel="stylesheet" href="app.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Budget Tracker</h1>
+        
+        <!-- Balance Section -->
+        <div class="balance-box">
+          <h3>Current Balance</h3>
+          <div id="balance">$0.00</div>
+        </div>
+        
+        <!-- Transaction Form -->
+        <form id="transaction-form">
+          <div>
+            <label for="description">Description</label>
+            <input type="text" id="description" placeholder="Enter description" required />
+          </div>
+          <div>
+            <label for="amount">Amount</label>
+            <input type="number" id="amount" placeholder="Enter amount" required />
+          </div>
+          <button type="submit">Add Transaction</button>
+        </form>
+</body>
+</html>
