@@ -1,37 +1,58 @@
+/* Card container */
 .card {
-    border: 1px solid #ccc;
+    width: 260px;             /* Slightly wider for better readability */
+    background-color: #fff;
     border-radius: 8px;
-    width: 220px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Soft shadow */
     padding: 16px;
     text-align: center;
-    background-color: #fff;
+    transition: transform 0.2s, box-shadow 0.2s;
   }
   
+  /* Subtle lift on hover */
+  .card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+  }
+  
+  /* VAMK logo styling */
   .logo {
     width: 80px;
-    margin-bottom: 10px;
+    margin-bottom: 12px;
   }
   
-  .degrees,
-  .title,
-  .field,
-  .email,
-  .phone,
-  .address {
+  /* Headings and text spacing */
+  .card h2 {
+    margin-bottom: 8px;
+    font-size: 1.1rem;
+    color: #333;
+  }
+  
+  .card p {
     margin: 4px 0;
+    line-height: 1.4;
+    color: #555;
   }
   
-  button {
-    margin-top: 10px;
-    padding: 8px 12px;
+  /* Email is optional, so we give it a distinct style if needed */
+  .email {
+    color: #333;
+    font-weight: bold;
+  }
+  
+  /* Button styling */
+  .card button {
+    margin-top: 14px;
+    padding: 10px 16px;
     background-color: #7f5af0;
     color: #fff;
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    font-size: 0.95rem;
   }
   
-  button:hover {
+  .card button:hover {
     background-color: #6c4ad1;
   }
   
