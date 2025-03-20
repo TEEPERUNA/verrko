@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
-import Header from './Header';
-import Balance from './Balance';
-import TransactionList from './TransactionList';
-import TransactionForm from './TransactionForm';
+import React from 'react';
+import { useState } from 'react';
+import Header from './components/Header';
+import Balance from './components/Balance';
+import TransactionList from './components/TransactionList';
+import TransactionForm from './components/TransactionForm';
 import logo from './assets/logo.svg';
 import './App.css';
 
@@ -14,7 +15,7 @@ function App() {
   };
 
   const removeTransaction = (id) => {
-    setTransactions(transactions.filter(t => t.id =! id));
+    setTransactions(transactions.filter(t => t.id !== id));
   };
 
   return (

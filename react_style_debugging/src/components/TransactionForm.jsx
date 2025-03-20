@@ -5,18 +5,19 @@ function TransactionForm({ onAdd }) {
   const [amount, setAmount] = useState("");
 
   const handleSubmit = (e) => {
+    e.preventDefault(); // Prevent page reload on form submission
     const transaction = {
       id: Math.random(),
       text: text,
-      amount: amount
+      amount: parseFloat(amount), // Ensure amount is treated as a number
     };
     onAdd(transaction);
-    setText("");
-    setAmount("");
+    setText(""); // Reset text field after submission
+    setAmount(""); // Reset amount field after submission
   };
 
   return (
-    <div className="transaction-form">
+    <form className="transaction-form" onSubmit={handleSubmit}>
       <div>
         <label>Text</label>
         <input type="text" value={text} onChange={(e) => setText(e.target.value)} />
@@ -25,7 +26,7 @@ function TransactionForm({ onAdd }) {
         <label>Amount</label>
         <input type="number" value={amount} onChange={(e) => setAmount(e.target.value)} />
       </div>
-      <button type="submit" onClick={handleSubmit}>Add Transaction</button>
+      <button type="submit">Add Transaction</button>
     </form>
   );
 }
