@@ -1,34 +1,75 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import BusinessCard from './components/businessCard'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+  // Controls the search input
+  const [searchTerm, setSearchTerm] = useState('')
+
+  // Example data for your three business cards
+  const data = [
+    {
+      id: 1,
+      name: 'John Doe',
+      degrees: 'M.Sc, M.Eng, B.Sc',
+      title: 'Product Manager / Professional Teacher',
+      field: 'Information Technology',
+      phone: '+358 50 2345678',
+      email: 'john.doe@vamk.fi',
+      address: 'Wolffintie 30, FI-65200 VAASA, Finland'
+    },
+    {
+      id: 2,
+      name: 'Jane Smith',
+      degrees: 'Dr, M.Sc, Eng',
+      title: 'CEO / Technical Director',
+      field: 'Information Technology',
+      phone: '+358 50 3456789',
+      email: 'jane.smith@vamk.fi',
+      address: 'Wolffintie 30, FI-65200 VAASA, Finland'
+    }
+  ]
+
+  // Filter data by name, title, or field
+  const filteredData = data.filter((item) => {
+    const lowerSearch = searchTerm.toLowerCase()
+    return (
+      item.name.toLowerCase().includes(lowerSearch) ||
+      item.title.toLowerCase().includes(lowerSearch) ||
+      item.field.toLowerCase().includes(lowerSearch)
+    )
+  })
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div className="app-container">
+      <h1>VAMK Business Cards</h1>
+
+      {/* Search bar */}
+      <div className="search-bar">
+        <input
+          type="text"
+          placeholder="Search by name, title, or field..."
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+        />
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
+
+      {/* Display filtered cards */}
+      <div className="cards-grid">
+        {filteredData.map((person) => (
+          <BusinessCard
+            key={person.id}
+            name={person.name}
+            degrees={person.degrees}
+            title={person.title}
+            field={person.field}
+            phone={person.phone}
+            email={person.email}
+            address={person.address}
+          />
+        ))}
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    </div>
   )
 }
 

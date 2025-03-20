@@ -1,26 +1,34 @@
-import React, { useState } from 'react';
-import './BusinessCard.css';
+import React, { useState } from 'react'
+import './BusinessCard.css'
 
-const BusinessCard = ({ name, education, jobTitle, company, email, logo }) => {
-  const [showContact, setShowContact] = useState(false);
+function BusinessCard({
+  name,
+  degrees,
+  title,
+  field,
+  phone,
+  email,
+  address
+}) {
+  const [showEmail, setShowEmail] = useState(false)
 
   return (
-    <div className="business-card">
-      <div className="card-header">
-        <img src={logo} alt={`${company} logo`} className="company-logo" />
-        <h2>{name}</h2>
-      </div>
-      <div className="card-body">
-        <p><strong>Education:</strong> {education}</p>
-        <p><strong>Job Title:</strong> {jobTitle}</p>
-        <p><strong>Company:</strong> {company}</p>
-        {showContact && <p><strong>Email:</strong> {email}</p>}
-        <button onClick={() => setShowContact(!showContact)}>
-          {showContact ? "Hide Contact Details" : "Show Contact Details"}
-        </button>
-      </div>
-    </div>
-  );
-};
+    <div className="card">
+      <img src="/vamk-logo.jpg" alt="VAMK Logo" className="logo" />
+      <h2>{name}</h2>
+      <p className="degrees">{degrees}</p>
+      <p className="title">{title}</p>
+      <p className="field">{field}</p>
+      <p className="phone">{phone}</p>
+      <p className="address">{address}</p>
+      {showEmail && <p className="email">{email}</p>}
 
-export default BusinessCard;
+      {/* Toggle email on this card only */}
+      <button onClick={() => setShowEmail(!showEmail)}>
+        {showEmail ? 'Hide Email' : 'Show Email'}
+      </button>
+    </div>
+  )
+}
+
+export default BusinessCard
